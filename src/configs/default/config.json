@@ -1,0 +1,15 @@
+{
+  "theme": "",
+  "menu": true,
+  "device": "PC",
+  "topMenu": true,
+  "hideMenu": false,
+  "footer": true,
+  "appInfos": {
+    "site_title": "name",
+    "site_copyright": "site_copyright",
+    "site_logo": "site_logo",
+    "site_favicon": "site_favicon"
+  },
+  "language": "zh-CN"
+}

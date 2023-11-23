@@ -1,0 +1,43 @@
+{
+  "name": "vite5-ts-vue3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "crypto-js": "^4.2.0",
+    "jsencrypt": "^3.3.2",
+    "mitt": "^3.0.1",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "query-string": "^8.1.0",
+    "vue": "^3.3.8",
+    "vue-i18n": "^9.7.0",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "^2.53.2",
+    "@arco-plugins/vite-vue": "^1.4.5",
+    "@types/crypto-js": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "less": "^4.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.16.7",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.22"
+  }
+}
