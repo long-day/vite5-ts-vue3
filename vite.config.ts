@@ -10,6 +10,9 @@ import { vitePluginForArco } from '@arco-plugins/vite-vue';
 // for Vue组件@引用
 import { resolve } from 'path';
 
+// for unocss
+import UnoCSS from 'unocss/vite';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -27,6 +30,7 @@ export default defineConfig({
     vitePluginForArco({
       style: 'css',
     }),
+    UnoCSS(),
   ],
 
   resolve: {
