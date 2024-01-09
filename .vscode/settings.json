@@ -13,8 +13,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
-    // 每次保存的时候将代码按eslint格式进行修复
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
