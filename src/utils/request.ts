@@ -1,8 +1,8 @@
 import axios from 'axios';
-import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
-import { useLoginStore } from '@/store';
+import type { InternalAxiosRequestConfig } from 'axios';
+// import { useLoginStore } from '@/store';
 import { getToken } from '@/utils/auth';
-import modalErrorWrapper from '@/utils/modal-error-wrapper';
+// import modalErrorWrapper from '@/utils/modal-error-wrapper';
 import messageErrorWrapper from '@/utils/message-error-wrapper';
 
 // default config
@@ -17,10 +17,6 @@ export interface HttpResponse<T = any> {
   data: T; // 返回数据
   rows: T;
   total: number;
-  status: number;
-  statusText: string;
-  headers: any;
-  config: any;
 }
 
 // request interceptors
@@ -39,44 +35,54 @@ axios.interceptors.request.use(
 
 // response interceptors
 axios.interceptors.response.use(
-  (response: AxiosResponse<HttpResponse>) => {
-    // 二进制数据则直接返回
-    if (
-      response.request.responseType === 'blob' ||
-      response.request.responseType === 'arraybuffer'
-    ) {
-      return response;
+  (response) => {
+    // 过滤掉失败情况(返回status非2XX的情况)
+    if (isStopHere(response.status)) {
+      return Promise.reject(new Error('请求发生错误...'));
     }
-    const res = response.data;
-    if (res.code == 200) {
-      return response;
-    }
-    if ([401].includes(res.code) && response.config.url !== '/auth/user/info') {
-      modalErrorWrapper({
-        title: '确认退出',
-        content: res.msg,
-        maskClosable: false,
-        escToClose: false,
-        okText: '重新登录',
-        async onOk() {
-          const loginStore = useLoginStore();
-          await loginStore.logout();
-          window.location.reload();
-        },
-      });
-    } else {
-      messageErrorWrapper({
-        content: res.msg || '网络错误',
-        duration: 5 * 1000,
-      });
-    }
-    return Promise.reject(new Error(res.msg || '网络错误'));
+
+    return response;
   },
   (error) => {
     messageErrorWrapper({
-      content: error.msg || '网络错误',
+      content: error.msg || '发生了错误...',
       duration: 5 * 1000,
     });
     return Promise.reject(error);
   },
 );
+
+/**
+ * 判断状态码是否为2XX,返回是否通过检验
+ * @param responseStatus 响应状态码
+ * @returns 通过检验: true, 否则: false
+ */
+function isStopHere(responseStatus: number) {
+  responseStatus /= 100;
+  switch (responseStatus) {
+    case 2: {
+      return false;
+    }
+    case 4: {
+      messageErrorWrapper({
+        content: '客户端(网络)错误',
+        duration: 5 * 1000,
+      });
+      return true;
+    }
+    case 5: {
+      messageErrorWrapper({
+        content: '服务器网关错误',
+        duration: 5 * 1000,
+      });
+      return true;
+    }
+    default: {
+      messageErrorWrapper({
+        content: '未知错误',
+        duration: 5 * 1000,
+      });
+      return true;
+    }
+  }
+}
