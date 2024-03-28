@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router';
 
 const NotFound: RouteRecordRaw = {
   name: 'NotFound',
-  path: '/not-found',
+  path: '/:catchAll(.*)',
   component: () => import('@/views/static/NotFound.vue'),
   meta: {
     title: '未找到页面',

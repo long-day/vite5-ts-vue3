@@ -3,7 +3,7 @@ import type { InternalAxiosRequestConfig } from 'axios';
 // import { useLoginStore } from '@/store';
 import { getToken } from '@/utils/auth';
 // import modalErrorWrapper from '@/utils/modal-error-wrapper';
-import messageErrorWrapper from '@/utils/message-error-wrapper';
+// import messageErrorWrapper from '@/utils/message-error-wrapper';
 
 // default config
 if (import.meta.env.VITE_API_BASE_URL) {
@@ -43,13 +43,7 @@ axios.interceptors.response.use(
 
     return response;
   },
-  (error) => {
-    messageErrorWrapper({
-      content: error.msg || '发生了错误...',
-      duration: 5 * 1000,
-    });
-    return Promise.reject(error);
-  },
+  (error) => {},
 );
 
 /**
@@ -64,24 +58,12 @@ function isStopHere(responseStatus: number) {
       return false;
     }
     case 4: {
-      messageErrorWrapper({
-        content: '客户端(网络)错误',
-        duration: 5 * 1000,
-      });
       return true;
     }
     case 5: {
-      messageErrorWrapper({
-        content: '服务器网关错误',
-        duration: 5 * 1000,
-      });
       return true;
     }
     default: {
-      messageErrorWrapper({
-        content: '未知错误',
-        duration: 5 * 1000,
-      });
       return true;
     }
   }

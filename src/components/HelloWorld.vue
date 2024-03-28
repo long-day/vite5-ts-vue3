@@ -8,7 +8,7 @@ const count = ref(0);
 
 <template>
   <h1>{{ msg }}</h1>
-
+  <a-button type="primary">测试AntDesign的按钮</a-button>
   <div class="card">
     <button class="bg-red-2" type="button" @click="count++"
       >count is {{ count }}</button

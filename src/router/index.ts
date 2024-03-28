@@ -1,16 +1,11 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 
-import { allRoutes } from "./routes";
+import AppRouter from './routes/app.ts';
+import NotFindRouter from './routes/not-find.ts';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    ...allRoutes,
-    {
-      path: "/:catchAll(.*)",
-      redirect: "/not-found",
-    },
-  ],
+  routes: [AppRouter, NotFindRouter],
   scrollBehavior() {
     return { top: 0 };
   },
