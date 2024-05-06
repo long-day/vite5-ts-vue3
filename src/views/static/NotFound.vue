@@ -1,35 +1,24 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Result, Button } from 'ant-design-vue';
+</script>
 
 <template>
   <div class="not-found-root">
-    <a-image
-      class="not-found-img"
-      width="90%"
-      height="90%"
-      src="src/assets/image/404-select.png"
-      fit="scale-down"
-      alt="Page Not Found"
-    />
+    <Result status="404" title="404" sub-title="页面未找到!">
+      <template #extra>
+        <Button
+          v-if="false"
+          type="primary"
+          @click="
+            () => {
+              console.log('去登陆');
+            }
+          "
+          >去登陆</Button
+        >
+      </template>
+    </Result>
   </div>
 </template>
 
-<style scoped>
-.not-found-root {
-  margin-top: 60px;
-  height: calc(100dvh - 60px);
-  width: calc(100dvw);
-  pointer-events: none;
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center;
-}
-.not-found-root :deep(.arco-image) {
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  pointer-events: none;
-}
-.not-found-img {
-  user-select: none;
-  pointer-events: none;
-}
-</style>
+<style scoped></style>
