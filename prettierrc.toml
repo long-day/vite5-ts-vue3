@@ -1,0 +1,32 @@
+# 换行长度，默认80
+printWidth = 80
+# tab缩进大小,默认为2
+tabWidth = 2
+# 使用tab缩进，默认false
+useTabs = false
+# 每行末尾自动添加分号
+semi = true
+# 使用单引号代替双引号
+singleQuote = true
+# 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
+trailingComma = "all"
+
+# 对象中打印空格 默认true
+# true: { foo: bar }
+# false: {foo: bar}
+bracketSpacing = true
+# "<>" 中的 ">" 是否同内容放置在相同行之中
+bracketSameLine = true
+
+# 箭头函数参数括号 默认avoid 可选 avoid| always
+# avoid 能省略括号的时候就省略 例如x => x
+# always 总是有括号
+arrowParens = "always"
+# html 空格敏感度
+htmlWhitespaceSensitivity = "css"
+# 是否格式化vue中script标签格式
+vueIndentScriptAndStyle = false
+# 换行符使用 \n
+endOfLine = "lf"
+# 强制每行单个属性
+singleAttributePerLine = false
