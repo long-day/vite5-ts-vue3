@@ -1,45 +1,44 @@
 {
-  "name": "vite5-ts-vue3",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "ant-design-vue": "^4.2.2",
-    "axios": "^1.7.2",
-    "crypto-js": "^4.2.0",
-    "jsencrypt": "^3.3.2",
-    "mitt": "^3.0.1",
-    "pinia": "^2.1.7",
-    "pinia-plugin-persistedstate": "^3.2.1",
-    "query-string": "^9.0.0",
-    "vue": "^3.4.27",
-    "vue-i18n": "^9.13.1",
-    "vue-router": "^4.3.2"
-  },
-  "devDependencies": {
-    "@arco-plugins/vite-vue": "^1.4.5",
-    "@types/crypto-js": "^4.2.2",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
-    "eslint": "^9.4.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-vue": "^9.26.0",
-    "globals": "^15.4.0",
-    "less": "^4.2.0",
-    "prettier": "^3.3.1",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^8.0.0-alpha.29",
-    "unocss": "^0.60.4",
-    "unplugin-auto-import": "^0.17.6",
-    "unplugin-vue-components": "^0.27.0",
-    "vite": "^5.2.13",
-    "vue-tsc": "^2.0.21"
-  }
+    "name": "vite5-ts-vue3",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "ant-design-vue": "^4.2.3",
+        "axios": "^1.7.2",
+        "crypto-js": "^4.2.0",
+        "jsencrypt": "^3.3.2",
+        "mitt": "^3.0.1",
+        "pinia": "^2.1.7",
+        "pinia-plugin-persistedstate": "^3.2.1",
+        "query-string": "^9.0.0",
+        "vue": "^3.4.31",
+        "vue-i18n": "^9.13.1",
+        "vue-router": "^4.4.0"
+    },
+    "devDependencies": {
+        "@arco-plugins/vite-vue": "^1.4.5",
+        "@types/crypto-js": "^4.2.2",
+        "@vitejs/plugin-vue": "^5.0.5",
+        "@vue/eslint-config-prettier": "^9.0.0",
+        "@vue/eslint-config-typescript": "^13.0.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "eslint-plugin-vue": "^9.27.0",
+        "globals": "^15.8.0",
+        "less": "^4.2.0",
+        "prettier": "^3.3.2",
+        "typescript": "^5.5.3",
+        "typescript-eslint": "^8.0.0-alpha.29",
+        "unocss": "^0.61.3",
+        "unplugin-auto-import": "^0.17.6",
+        "unplugin-vue-components": "^0.27.2",
+        "vite": "^5.3.3",
+        "vue-tsc": "^2.0.26"
+    }
 }
